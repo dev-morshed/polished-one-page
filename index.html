@@ -1,0 +1,1080 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="https://static.readdy.ai/static/e.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking behavior in operation (P130-2025) – Bucharest & Ilfov – Dr. ing. Silvio Ionescu Lupeano</title>
+    <meta name="description" content="Professional construction inspection services with advanced equipment. Comprehensive building inspections for contractors, architects, and property owners.">
+    <meta name="keywords" content="construction inspection, building inspection, structural inspection, professional inspection services">
+    
+    <meta property="og:title" content="Construction Inspection Services - Professional Building Inspections">
+    <meta property="og:description" content="Professional construction inspection services with advanced equipment. Comprehensive building inspections for contractors, architects, and property owners.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com">
+    <meta property="og:image" content="https://example.com/assets/img/og-image.jpg">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Construction Inspection Services">
+    <meta name="twitter:description" content="Professional construction inspection services with advanced equipment.">
+    <meta name="twitter:image" content="https://example.com/assets/img/og-image.jpg">
+    
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏗️</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0E7B6B',
+                        secondary: '#F9F4EC',
+                        cream: '#F9F4EC',
+                        emerald: '#0E7B6B'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+
+
+
+    
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+        
+        :root {
+            --primary-color: #0E7B6B;
+            --secondary-color: #F9F4EC;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--secondary-color);
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .hero-bg {
+            background-image: url('https://readdy.ai/api/search-image?query=Modern%20construction%20site%20with%20professional%20engineers%20conducting%20building%20inspections%2C%20architectural%20blueprints%20visible%2C%20construction%20workers%20wearing%20safety%20helmets%20and%20vests%2C%20clean%20minimalist%20background%20with%20soft%20natural%20lighting%2C%20professional%20photography%20style%2C%20high%20quality%20detailed%20image%20showing%20construction%20inspection%20process&width=1920&height=1080&seq=hero001&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+         /* Alert important */
+  .alert{border-radius:14px;padding:14px;border:1px solid #ffd0d0;background:#fff2f2;color:#7a0018}
+  .alert strong{color:#b30012}
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(14, 123, 107, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0a6b5c;
+            transform: translateY(-2px);
+        }
+        
+        .floating-buttons {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .floating-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(14, 123, 107, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(14, 123, 107, 0.4);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 200px;
+        }
+        
+        .lazy-image {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .lazy-image.loaded {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .floating-buttons {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            
+            .floating-btn {
+                width: 48px;
+                height: 48px;
+            }
+        }
+
+    
+
+
+    </style>
+</head>
+
+<body class="smooth-scroll">
+    <header class="bg-white/95 backdrop-blur-sm shadow-sm fixed w-full top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+
+                   <img src="https://i.ibb.co.com/7Jy7GgHK/Whats-App-Image-2025-10-01-at-8-08-21-AM-1.png" alt="Company Logo" class="h-12 w-auto">
+
+
+                    <span class="text-xl font-bold text-primary"> </span>
+
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                    <a href="#pricing-calculator" class="text-gray-700 hover:text-primary transition-colors">Prices</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary transition-colors">Who do we address</a>
+                    <a href="#faq" class="text-gray-700 hover:text-primary transition-colors">FAQ</a>
+                    <a href="#calculator" class="text-gray-700 hover:text-primary transition-colors">Calculator</a>
+                    <a href="#contact" class="btn-primary px-6 py-2 !rounded-button whitespace-nowrap">Contact </a>
+                </div>
+                
+                <button class="md:hidden w-6 h-6 flex items-center justify-center" id="mobile-menu-btn">
+                    <i class="ri-menu-line text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="md:hidden hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+                    <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-primary">Services</a>
+                    <a href="#pricing-calculator" class="block px-3 py-2 text-gray-700 hover:text-primary">Prices</a>
+                    <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-primary">Who do we address</a>
+                    <a href="#faq" class="block px-3 py-2 text-gray-700 hover:text-primary">FAQ</a>
+                    <a href="#calculator" class="block px-3 py-2 text-gray-700 hover:text-primary">Calculator</a>
+                    <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-primary">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero-bg min-h-screen flex items-center relative">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-2xl">
+                <span class="badge">P130-2025 • UCE mandatory</span>
+
+
+                 <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+
+                    Monitoring of operational behavior (P130-2025) –Bucharest & Ilfov
+                   
+                <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                     <strong>Dr. Eng. Silviu Ionescu Lupeanu</strong> – structural steel designer, site supervisor (Category B), expert in technical assessments and inspections.  
+                     We quickly implement the <em>UCE program</em>, carry out <em>regular monitoring</em> (at least annually and after specific events), and conduct <em>special monitoring</em> when required.
+                </p> 
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#calculator" class="btn-primary px-8 py-4 !rounded-button text-lg font-semibold whitespace-nowrap inline-flex items-center justify-center">
+                        See prices
+                        <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                    <a href="#contact" class="bg-white/10 backdrop-blur-sm text-white px-8 py-4 !rounded-button text-lg font-semibold hover:bg-white/20 transition-all whitespace-nowrap inline-flex items-center justify-center">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <div class="alert" role="status" style="margin-left:80px; margin-right:80px;">
+      <strong>IMPORTANT:</strong> From 2025, <em>In-Use Behavior Monitoring (UCE)</em> is 
+      <strong>mandatory for all buildings</strong>. 
+      Owners/managers have a legal responsibility to have a <em>UCE Program</em>, 
+      <em>Event Log</em> and documented periodic visits.
+    </div>
+
+
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Inspection Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive inspection solutions tailored to meet the diverse needs of construction projects, from residential to commercial developments.
+                </p>
+            </div>
+
+
+
+
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-cream p-8 !rounded-lg card-hover">
+                   
+                    <h3 class="text-xl font-semibold mb-4">UCE Program</h3>
+                    <p class="text-gray-600 mb-6">
+                        Preparation of UCE Program according to P130-2025 and CR0, adapted to the type of construction, frequencies, responsibilities and work forms.
+                    </p>
+                    <img src="https://readdy.ai/api/search-image?query=Professional%20engineer%20conducting%20structural%20inspection%20of%20building%20foundation%20and%20concrete%20structures%2C%20wearing%20safety%20helmet%20and%20using%20inspection%20equipment%2C%20detailed%20architectural%20assessment%2C%20clean%20professional%20photography%20with%20natural%20lighting&width=400&height=250&seq=service001&orientation=landscape" alt="Structural Inspection" class="w-full h-48 object-cover !rounded-lg lazy-image">
+                </div>
+                
+                <div class="bg-cream p-8 !rounded-lg card-hover">
+                  
+                    <h3 class="text-xl font-semibold mb-4">Current tracking</h3>
+                    <p class="text-gray-600 mb-6">
+                        Periodic visits, observation sheets and images, completion of the Event Diary. Annual report and prioritization of interventions.
+                    </p>
+                    <img src="https://readdy.ai/api/search-image?query=Construction%20safety%20inspector%20reviewing%20building%20compliance%20documents%20and%20safety%20protocols%2C%20professional%20workplace%20environment%20with%20safety%20equipment%20and%20compliance%20checklists%20visible%2C%20high%20quality%20detailed%20photography&width=400&height=250&seq=service002&orientation=landscape" alt="Safety Compliance" class="w-full h-48 object-cover !rounded-lg lazy-image">
+                </div>
+                
+                <div class="bg-cream p-8 !rounded-lg card-hover">
+                   
+                    <h3 class="text-xl font-semibold mb-4">Special tracking</h3>
+                    <p class="text-gray-600 mb-6">
+                        Activated after significant degradations or events. Findings sheet + immediate recommendations and UCE program update.
+                    </p>
+                    <img src="https://readdy.ai/api/search-image?query=Quality%20assurance%20inspector%20examining%20construction%20materials%20and%20workmanship%2C%20detailed%20close-up%20of%20inspection%20process%20with%20measurement%20tools%20and%20quality%20control%20equipment%2C%20professional%20construction%20site%20environment&width=400&height=250&seq=service003&orientation=landscape" alt="Quality Assurance" class="w-full h-48 object-cover !rounded-lg lazy-image">
+                </div>
+                
+                <div class="bg-cream p-8 !rounded-lg card-hover">
+                 
+                    <h3 class="text-xl font-semibold mb-4">Due diligence & reception</h3>
+                    <p class="text-gray-600 mb-6">
+                        Indicative checks for transactions or pre-reception: visible non-conformities, recommendations and budgets.
+                    </p>
+                    <img src="https://readdy.ai/api/search-image?query=Professional%20home%20inspector%20examining%20residential%20property%20interior%20and%20exterior%2C%20detailed%20inspection%20of%20electrical%20systems%20plumbing%20and%20structural%20elements%2C%20modern%20house%20inspection%20process%20with%20professional%20equipment&width=400&height=250&seq=service004&orientation=landscape" alt="Residential Inspections" class="w-full h-48 object-cover !rounded-lg lazy-image">
+                </div>
+                
+                <div class="bg-cream p-8 !rounded-lg card-hover">
+                   
+                    <h3 class="text-xl font-semibold mb-4">Integration with expertise & design</h3>
+                    <p class="text-gray-600 mb-6">
+                       For advanced degradations: technical expertise, measures project, special follow-up. Multidisciplinary coordination.
+                    </p>
+                    <img src="https://readdy.ai/api/search-image?query=Commercial%20building%20inspection%20of%20modern%20office%20complex%2C%20professional%20inspector%20examining%20HVAC%20systems%20and%20commercial%20infrastructure%2C%20detailed%20technical%20assessment%20with%20advanced%20inspection%20equipment%20and%20documentation&width=400&height=250&seq=service005&orientation=landscape" alt="Commercial Inspections" class="w-full h-48 object-cover !rounded-lg lazy-image">
+                </div>
+                
+              
+            </div>
+        </div>
+    </section>
+
+
+<section id="equipment" class="py-20 bg-cream">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Equipment used</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                We utilize state-of-the-art inspection technology to provide accurate, reliable, and comprehensive assessments of your construction projects.
+            </p>
+        </div>
+        
+        <!-- Upper row -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            <div class="bg-white p-6 !rounded-lg card-hover text-center">
+                <img src="https://readdy.ai/api/search-image?query=Professional%20thermal%20imaging%20camera%20for%20building%20inspection%2C%20high-tech%20infrared%20detection%20equipment%20on%20clean%20white%20background%2C%20detailed%20product%20photography%20showing%20advanced%20thermal%20inspection%20technology&width=300&height=200&seq=equip001&orientation=landscape" alt="Thermal Imaging" class="w-full h-40 object-cover !rounded-lg mb-4 lazy-image">
+                <h3 class="text-lg font-semibold mb-2">Thermographic camera</h3>
+                <p class="text-gray-600 text-sm">Seek Thermal ShotPRO (320×240), photo/video analysis, SeekFusion, Wi-Fi, tripod. Thermography for thermal bridges, infiltrations, heat loss.</p>
+            </div>
+
+            <div class="bg-white p-6 !rounded-lg card-hover text-center">
+                <img src="https://readdy.ai/api/search-image?query=Professional%20structural%20analysis%20equipment%20and%20concrete%20testing%20tools%2C%20advanced%20non-destructive%20testing%20instruments%20for%20building%20inspection%2C%20clean%20product%20photography%20with%20technical%20measurement%20devices&width=300&height=200&seq=equip003&orientation=landscape" alt="Structural Analysis" class="w-full h-40 object-cover !rounded-lg mb-4 lazy-image">
+                <h3 class="text-lg font-semibold mb-2">Concrete scanner</h3>
+                <p class="text-gray-600 text-sm">Bosch D‑tect 200 C (detection of fittings/installations/gaps), check before drilling and fixing.</p>
+            </div>
+
+            <div class="bg-white p-6 !rounded-lg card-hover text-center">
+                <img src="https://img.freepik.com/premium-photo/compact-drone-with-advanced-camera-capabilities_1084095-224.jpg?w=740" alt="Drone" class="w-full h-40 object-cover !rounded-lg mb-4 lazy-image">
+                <h3 class="text-lg font-semibold mb-2">Drone</h3>
+                <p class="text-gray-600 text-sm">DJI Mini 2 – hard-to-reach roof/facade inspections, 4K photo/video.</p>
+            </div>
+        </div>
+
+        <!-- Lower row -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 !rounded-lg card-hover text-center">
+                <img src="https://img.freepik.com/free-photo/laser-measuring-level-construction-work-work-shallow-depth-field-green-laser-beams-level-measurement-construction-finishing-works_166373-1898.jpg?t=st=1759846384~exp=1759849984~hmac=96365fb6594c815936a7a0c5e2515e042308add54fa0171b35436fd48be49ffe&w=740" alt="Laser rangefinder & level" class="w-full h-40 object-cover !rounded-lg mb-4 lazy-image">
+                <h3 class="text-lg font-semibold mb-2">Laser rangefinder & level</h3>
+                <p class="text-gray-600 text-sm">GLM + green beam level for quick measurements and markings.</p>
+            </div>
+
+            <div class="bg-white p-6 !rounded-lg card-hover text-center">
+                <img src="https://img.freepik.com/free-photo/top-view-childrens-hands-touching-microscope_259150-60323.jpg?t=st=1759846894~exp=1759850494~hmac=ef2dc7587e8bcc964cdbb51a98859e1fcbf1c2219e4e5cda69fcb46804b2a7da&w=740" class="w-full h-40 object-cover !rounded-lg mb-4 lazy-image">
+                <h3 class="text-lg font-semibold mb-2">Industrial endoscope</h3>
+                <p class="text-gray-600 text-sm">Inspections in voids, floors and technical spaces.</p>
+            </div>
+
+            <div class="bg-white p-6 !rounded-lg card-hover text-center">
+                <img src="https://img.freepik.com/premium-photo/soil-ph-meter-soil-fertility-meter-cultivation_38663-753.jpg?w=740" alt="Thermo-hygrometer & luxmeter" class="w-full h-40 object-cover !rounded-lg mb-4 lazy-image">
+                <h3 class="text-lg font-semibold mb-2">Thermo-hygrometer & luxmeter</h3>
+                <p class="text-gray-600 text-sm">Humidity/temperature and lighting level measurement.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!--  -->
+
+
+
+<section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Left content -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Who are we addressing?</h2>
+                
+                <div class="space-y-6">
+                    <!-- Callout 1 -->
+                    <div class="flex items-start space-x-4">
+                        
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Local authorities & public institutions</h3>
+                            <p class="text-gray-600">City halls, local/county councils, schools, kindergartens, hospitals, polyclinics, nurseries, cultural centers – UCE implementation and periodic reporting.</p>
+                        </div>
+                    </div>
+
+                    <!-- Callout 2 -->
+                    <div class="flex items-start space-x-4">
+                       
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Owners' associations & administrators</h3>
+                            <p class="text-gray-600">Condominiums GF+4 up to towers – UCE program on stairs, annual visits, records of degradation, communication with the committee.</p>
+                        </div>
+                    </div>
+
+                    <!-- Callout 3 -->
+                    <div class="flex items-start space-x-4">
+                      
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Developers & Portfolio Owners</h3>
+                            <p class="text-gray-600">Offices, retail, commercial spaces, parking lots – UCE integration with maintenance and works budgeting.</p>
+                        </div>
+                    </div>
+
+                    <!-- Callout 4 -->
+                    <div class="flex items-start space-x-4">
+
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Industrial & logistic operators</h3>
+                            <p class="text-gray-600">Production/storage halls, cold storages – current/special monitoring, instrumentation, areas with technological risk.</p>
+                        </div>
+                    </div>
+
+                    <!-- New Callout 5 -->
+                    <div class="flex items-start space-x-4">
+                       
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Investors, banks, asset managers</h3>
+                            <p class="text-gray-600">Technical due diligence, financing/insurance documents and post-intervention monitoring.</p>
+                        </div>
+                    </div>
+
+                    <!-- New Callout 6 -->
+                    <div class="flex items-start space-x-4">
+                       
+                        <div>
+                            <h3 class="text-lg font-semibold mb-2">Individual owners</h3>
+                            <p class="text-gray-600">Individual homes – simplified UCE program, visits after events (earthquake, flood, fire) and recommendations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right image -->
+            <div class="relative">
+      <img 
+        src="https://readdy.ai/api/search-image?query=Professional%20construction%20team%20including%20architects%20engineers%20and%20contractors%20collaborating%20on%20building%20project%2C%20diverse%20group%20of%20construction%20professionals%20reviewing%20blueprints%20and%20plans%2C%20modern%20construction%20site%20with%20safety%20equipment%20and%20professional%20atmosphere&width=600&height=500&seq=about001&orientation=portrait" 
+        alt="Professional Team" 
+        class="w-full h-128 md:h-[36rem] lg:h-[40rem] object-cover !rounded-lg lazy-image" >
+    <div class="absolute inset-0 bg-primary/10 !rounded-lg"></div>
+    </div>
+
+     </div>
+    </div>
+</section>
+
+ 
+    <section id="faq" class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions (FAQ)</h2>
+                 <p class="text-xl text-gray-600">
+                    Get answers to common questions about our inspection services and processes.
+                </p> 
+            </div>
+
+
+                        <style>
+              .accordion-content {
+                  max-height: 0;
+                  overflow: hidden;
+                  opacity: 0;
+                  transition: all 0.4s ease;
+              }
+
+              .accordion-content.active {
+                  max-height: 500px;
+                  opacity: 1;
+              }
+            </style>
+
+
+            
+            <div class="space-y-4">
+                <div class="bg-white !rounded-lg overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-trigger">
+                        <span class="text-lg font-semibold text-gray-900">What is UCE and how does it differ from technical expertise?</span>
+                        <i class="ri-arrow-down-s-line text-xl text-primary transition-transform faq-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">
+                            UCE = periodic visits and documentation of the condition; technical expertise is an in-depth analysis carried out by a certified expert, necessary when serious problems arise or for authorizing interventions.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white !rounded-lg overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-trigger">
+                        <span class="text-lg font-semibold text-gray-900">Who has the legal obligation?</span>
+                        <i class="ri-arrow-down-s-line text-xl text-primary transition-transform faq-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">
+                           Building owners/managers, both public and private, must develop the UCE Program, keep the Event Log, and conduct documented periodic visits.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white !rounded-lg overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-trigger">
+                        <span class="text-lg font-semibold text-gray-900">How often are the visits made?</span>
+                        <i class="ri-arrow-down-s-line text-xl text-primary transition-transform faq-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">
+                            At least annually (current monitoring) and whenever events occur (earthquake, flood, fire, subsidence, damage). Special monitoring is established for some buildings.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white !rounded-lg overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-trigger">
+                        <span class="text-lg font-semibold text-gray-900">What are the deliverables?</span>
+                        <i class="ri-arrow-down-s-line text-xl text-primary transition-transform faq-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">
+                           UCE program, observation sheets with photos, Event Journal, annual report with conclusions and prioritization of interventions.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white !rounded-lg overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors faq-trigger">
+                        <span class="text-lg font-semibold text-gray-900">What happens after a major earthquake?</span>
+                        <i class="ri-arrow-down-s-line text-xl text-primary transition-transform faq-icon"></i>
+                    </button>
+                    <div class="accordion-content px-6 pb-4">
+                        <p class="text-gray-600">
+                           A special follow-up visit is made , the effects are recorded, immediate measures and the need for a technical expertise are established.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
+
+                <section id="pricing-calculator" class="py-20 bg-white">
+                  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <!-- Heading -->
+                    <div class="text-center mb-16">
+                      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        Price Packages & Cost Calculator
+                      </h2>
+                      <p class="text-lg text-gray-600">
+                        Prices depend on the building type, total area, complexity, and whether instrumentation is included.
+                        We also offer discounts for portfolios and repeat clients.
+                      </p>
+                    </div>
+
+                    <!-- Price Cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
+                      <div class="bg-cream text-center p-8 rounded-xl shadow hover:shadow-md transition">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Block</h3>
+                        <p class="text-lg text-primary font-bold">from €890</p>
+                      </div>
+                      <div class="bg-cream text-center p-8 rounded-xl shadow hover:shadow-md transition">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">House</h3>
+                        <p class="text-lg text-primary font-bold">from €690</p>
+                      </div>
+                      <div class="bg-cream text-center p-8 rounded-xl shadow hover:shadow-md transition">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Industrial Hall</h3>
+                        <p class="text-lg text-primary font-bold">from €1290</p>
+                      </div>
+                    </div>
+
+                    <!-- Calculator Form -->
+
+
+                    <section id="calculator" class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Approximate Calculator
+      </h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Get an estimated price based on your building type, total area, and whether instrumentation is included.
+      </p>
+    </div>
+
+    <!-- Calculator Form -->
+    <div class="bg-cream p-8 rounded-xl shadow max-w-2xl mx-auto">
+      <form id="calc-form" class="space-y-6">
+        <!-- Building type -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Building Type</label>
+          <select
+            name="tip"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          >
+            <option value="bloc">Block</option>
+            <option value="casa">House</option>
+            <option value="hala">Hall / Warehouse</option>
+            <option value="birouri">Offices / Retail</option>
+          </select>
+        </div>
+
+        <!-- Property size -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Estimated Area (sq. meters)</label>
+          <input
+            type="number"
+            name="sup"
+            min="0"
+            step="10"
+            placeholder="e.g. 500"
+            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          />
+        </div>
+
+        <!-- Include instrumentation -->
+        <div class="flex items-center space-x-2">
+          <input
+            type="checkbox"
+            name="instr"
+            id="instr"
+            class="w-5 h-5 border-gray-300 rounded focus:ring-primary"
+          />
+          <label for="instr" class="text-gray-700 font-medium">Include Instrumentation</label>
+        </div>
+      </form>
+
+      <!-- Output -->
+      <div id="calc-out" class="mt-6 text-center text-lg font-semibold text-gray-900" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+
+
+    <section id="contact" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+                <p class="text-xl text-gray-600">
+                    Ready to schedule your inspection? Contact us today for a free consultation and quote.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-primary/10 !rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="ri-phone-line text-xl text-primary"></i>
+                            </div>
+
+                          <div>
+                                <h4 class="font-semibold text-gray-900">Phone</h4>
+                                <a href="tel:+40700000000" id="phoneLink">+40 700 000 000</a>
+                                <p class="text-sm text-gray-500"></p>
+                            </div> 
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-primary/10 !rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i class="ri-mail-line text-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Email</h4>
+                              <a href="mailto:contact@urmarire-constructii.ro">contact@urmarire-constructii.ro</a> 
+                                <p class="text-sm text-gray-500"></p>
+                            </div>
+                        </div>
+
+
+                        
+                      <div class="flex items-start space-x-4">
+                         
+                        </div>
+                        
+                        <div class="flex items-start space-x-4">
+                          
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 !rounded-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
+
+
+                 <form 
+                      id="contact-form"
+                      action="mailto:contact@urmarire-constructii.ro"  
+                      method="POST"
+                      class="space-y-6"
+                    >
+                                                 
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">First Name *</label>
+                                <input type="text" required class="w-full p-3 border border-gray-300 !rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 mb-2">Last Name *</label>
+                                <input type="text" required class="w-full p-3 border border-gray-300 !rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Smith">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                            <input type="email" required class="w-full p-3 border border-gray-300 !rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="john.smith@example.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Phone Number</label>
+                            <input type="tel" class="w-full p-3 border border-gray-300 !rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="+40 123 456 789">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Service Needed</label>
+                            <select class="w-full p-3 border border-gray-300 !rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option value="block">Block</option>
+                                <option value="residential">House</option>
+                                <option value="commercial">Hall/Warehouse</option>
+                                <option value="structural">Offices/Retail</option>
+                                
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Message *</label>
+                            <textarea required rows="4" class="w-full p-3 border border-gray-300 !rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent resize-none" placeholder="Please describe your inspection needs and any specific requirements..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full btn-primary py-4 !rounded-button text-lg font-semibold whitespace-nowrap">
+                            Send Message
+                            <i class="ri-send-plane-line ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img class="mr-[250px]"  src="https://i.ibb.co.com/BHPYGyLj/Whats-App-Image-2025-10-01-at-8-08-21-AM-2.png" alt="Company Logo" class="h-12 w-auto" >
+
+                        <span class="text-xl font-bold"></span>
+
+                    </div>
+                    <p class="text-gray-300 mb-4 max-w-md">
+                        Professional construction inspection services with advanced equipment and certified professionals. Ensuring safety, compliance, and quality in every project.
+                    </p>
+                  
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#services" class="hover:text-white transition-colors">UCE Program</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Current tracking</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Special tracking</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Due diligence & reception</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Integration</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#equipment" class="hover:text-white transition-colors">Equipment</a></li>
+                          <li><a href="#pricing-calculator" class="hover:text-white transition-colors">Prices</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#calculator" class="hover:text-white transition-colors">Cost Calculator</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+
+
+                <p>&copy; 2025 Construction Time Tracking</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="tel:++40 700 000 000" class="floating-btn" title="Call Us">
+            <i class="ri-phone-line text-xl"></i>
+        </a>
+        <a href="https://wa.me/+40 700 000 000?text=Hello, I would like to inquire about your construction inspection services." class="floating-btn" title="WhatsApp">
+            <i class="ri-whatsapp-line text-xl"></i>
+        </a>
+    </div>
+
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+  
+
+
+  <script id="faq-accordion-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqTriggers = document.querySelectorAll('.faq-trigger');
+            
+            faqTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.faq-icon');
+                    
+                    faqTriggers.forEach(otherTrigger => {
+                        if (otherTrigger !== this) {
+                            const otherContent = otherTrigger.nextElementSibling;
+                            const otherIcon = otherTrigger.querySelector('.faq-icon');
+                            otherContent.classList.remove('active');
+                            otherIcon.style.transform = 'rotate(0deg)';
+                        }
+                    });
+                    
+                    content.classList.toggle('active');
+                    if (content.classList.contains('active')) {
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+
+
+    </script> 
+
+
+
+
+
+
+    <script id="cost-calculator-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const calculateBtn = document.getElementById('calculate-btn');
+            const resultDiv = document.getElementById('calculation-result');
+            const totalCostDiv = document.getElementById('total-cost');
+            const breakdownDiv = document.getElementById('cost-breakdown');
+            
+            calculateBtn.addEventListener('click', function() {
+                const propertyType = document.getElementById('property-type').value;
+                const propertySize = parseInt(document.getElementById('property-size').value) || 0;
+                const frequency = document.getElementById('frequency').value;
+                const thermalImaging = document.getElementById('thermal-imaging').checked;
+                const structuralAnalysis = document.getElementById('structural-analysis').checked;
+                const detailedReport = document.getElementById('detailed-report').checked;
+                
+                if (propertySize === 0) {
+                    alert('Please enter a valid property size.');
+                    return;
+                }
+                
+                let baseRate = 0;
+                switch (propertyType) {
+                    case 'residential':
+                        baseRate = 2;
+                        break;
+                    case 'commercial':
+                        baseRate = 3.5;
+                        break;
+                    case 'industrial':
+                        baseRate = 5;
+                        break;
+                }
+                
+                let frequencyMultiplier = 0;
+                let inspectionsPerYear = 0;
+                switch (frequency) {
+                    case 'annual':
+                        frequencyMultiplier = 1;
+                        inspectionsPerYear = 1;
+                        break;
+                    case 'biannual':
+                        frequencyMultiplier = 0.9;
+                        inspectionsPerYear = 2;
+                        break;
+                    case 'quarterly':
+                        frequencyMultiplier = 0.8;
+                        inspectionsPerYear = 4;
+                        break;
+                    case 'monthly':
+                        frequencyMultiplier = 0.7;
+                        inspectionsPerYear = 12;
+                        break;
+                }
+                
+                const baseInspectionCost = propertySize * baseRate * frequencyMultiplier;
+                
+                let additionalCosts = 0;
+                let additionalServices = [];
+                
+                if (thermalImaging) {
+                    additionalCosts += 500;
+                    additionalServices.push('Thermal Imaging (+500 RON)');
+                }
+                if (structuralAnalysis) {
+                    additionalCosts += 800;
+                    additionalServices.push('Structural Analysis (+800 RON)');
+                }
+                if (detailedReport) {
+                    additionalCosts += 300;
+                    additionalServices.push('Detailed Reporting (+300 RON)');
+                }
+                
+                const totalPerInspection = baseInspectionCost + additionalCosts;
+                const totalAnnualCost = totalPerInspection * inspectionsPerYear;
+                
+                totalCostDiv.textContent = `${Math.round(totalAnnualCost).toLocaleString()} RON`;
+                
+                let breakdown = `Base cost: ${Math.round(baseInspectionCost).toLocaleString()} RON per inspection<br>`;
+                breakdown += `Inspections per year: ${inspectionsPerYear}<br>`;
+                if (additionalServices.length > 0) {
+                    breakdown += `Additional services: ${additionalServices.join(', ')}<br>`;
+                }
+                breakdown += `Cost per inspection: ${Math.round(totalPerInspection).toLocaleString()} RON`;
+                
+                breakdownDiv.innerHTML = breakdown;
+                resultDiv.classList.remove('hidden');
+                
+                resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        });
+    </script>
+
+    <script id="contact-form-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const formData = new FormData(contactForm);
+                const firstName = contactForm.querySelector('input[type="text"]').value;
+                const lastName = contactForm.querySelectorAll('input[type="text"]')[1].value;
+                const email = contactForm.querySelector('input[type="email"]').value;
+                const phone = contactForm.querySelector('input[type="tel"]').value;
+                const service = contactForm.querySelector('select').value;
+                const message = contactForm.querySelector('textarea').value;
+                
+                const subject = 'Inspection Service Inquiry';
+                const body = `Name: ${firstName} ${lastName}%0D%0AEmail: ${email}%0D%0APhone: ${phone}%0D%0AService: ${service}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+                
+                window.location.href = `mailto:info@buildinspectpro.com?subject=${subject}&body=${body}`;
+            });
+        });
+    </script>
+
+    <script id="lazy-loading-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyImages = document.querySelectorAll('.lazy-image');
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.classList.add('loaded');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+        });
+    </script>
+
+    <script id="smooth-scroll-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
+
+<script>
+// Override: calc in lei + contact form mailto
+(function(){
+  var form=document.getElementById('calc-form');
+  var out=document.getElementById('calc-out');
+  function calcLei(){
+    if(!form||!out) return;
+    var tip=form.querySelector('[name="tip"]').value;
+    var sup=parseFloat(form.querySelector('[name="sup"]').value||'0');
+    var instr=form.querySelector('[name="instr"]').checked;
+    // Baze în lei/an (promo lansare)
+    var baseLei=0; if(tip==='bloc') baseLei=3990; else if(tip==='casa') baseLei=2990; else if(tip==='hala') baseLei=5490; else if(tip==='birouri') baseLei=4490;
+    var fSup=Math.ceil(sup/100)*0.15; // +15% / 100 mp
+    var total= Math.round(baseLei * (1+fSup));
+    if(instr){ total += 1500; } // instrumentare de bază (1 sesiune)
+    out.innerHTML='<div class="card"><strong>Estimare:</strong> ~ '+ new Intl.NumberFormat('ro-RO').format(total) +' lei/an + TVA — include 1 vizită & raport scurt</div>';
+  }
+  if(form){ form.addEventListener('input', calcLei); calcLei(); }
+
+  // Contact form -> email
+  var cform=document.getElementById('contact-form');
+  if(cform){
+    cform.addEventListener('submit', function(e){
+      e.preventDefault();
+      var data=new FormData(cform);
+      var nume=data.get('nume')||''; var email=data.get('email')||''; var tel=data.get('telefon')||''; var sub=(data.get('subiect')||'Solicitare UCE')+' – '+nume; var msg=data.get('mesaj')||'';
+      var body='Nume: '+nume+'%0AEmail: '+email+'%0ATelefon: '+tel+'%0A%0AMesaj:%0A'+encodeURIComponent(msg);
+      window.location.href='mailto:ionescu.lupeanu.silviu@gmail.com?subject='+encodeURIComponent(sub)+'&body='+body;
+      var st=document.getElementById('form-status'); if(st){ st.textContent='S-a deschis clientul de e-mail pentru trimitere. Dacă nu se deschide, scrie-ne direct la ionescu.lupeanu.silviu@gmail.com.' }
+    });
+  }
+})();
+</script>
+
+
+<script>
+    !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+    posthog.init('phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd', {
+        api_host: 'https://us.i.posthog.com',
+        autocapture: false,
+        capture_pageview: false,
+        capture_pageleave: false,
+        capture_performance: {
+            web_vitals: false,
+        },
+        rageclick: false,
+    })
+    window.shareKey = 'fCDS5prv90vXUUVbIc9ceg';
+   
+</script>
+
+</html>
